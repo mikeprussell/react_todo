@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navigation from "./components/Navigation";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NotFound from "./components/NotFound";
+import Footer from "./components/Footer";
+import TodoItems from "./components/TodoItems";
+import Categories from "./components/Categories";
+import Login from "./components/Auth/Login";
+import { AuthProvider } from './contexts/AuthContext'
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+      <Navigation />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={TodoItems} />
+          <Route exact path="/todoitems" component={TodoItems} />
+          <Route exact path="/categories" component={Categories} />
+          <Route exact path="/login" component={Login} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+      <Footer />
+      </AuthProvider>
     </div>
   );
 }
