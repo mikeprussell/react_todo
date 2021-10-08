@@ -7,16 +7,16 @@ export default function Navigation() {
 
   return (
     <div>
-      <Navbar variant="dark" bg="dark" expand="md">
-        <Navbar.Brand href="/">To-do List App powered by ReactJS</Navbar.Brand>
+      <Navbar variant="dark" bg="secondary" expand="md">
+        <Navbar.Brand href="#/">Todo List App</Navbar.Brand>
         {/* hamburger button */}
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
             <Nav className="mr-auto">
-              <Nav.Link href="/todoitems">Todo Items</Nav.Link>
-              <Nav.Link href="/categories">Categories</Nav.Link>
-              {!currentUser && <Nav.Link href="/login">Login</Nav.Link>}
+              <Nav.Link href="#/todoitems">Todo Items</Nav.Link>
+              <Nav.Link href="#/categories">Categories</Nav.Link>
+              {!currentUser && <Nav.Link href="#/login">Login</Nav.Link>}
             </Nav>
           </Navbar.Text>
         </Navbar.Collapse>

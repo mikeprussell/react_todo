@@ -14,12 +14,12 @@ export default function Login() {
   }
 
   return (
-    <div className="login">
-      <Jumbotron className="text-center">
-        <h1 className="mb-5">Welcome to ToDo ReactJS</h1>
+    <section className="login pb-4">
+      <Jumbotron className="text-center" style={{backgroundColor: "lightblue"}}>
+        <h1 className="mb-3">Welcome to the Todo List App</h1>
       </Jumbotron>
-      <Container>
-        <Card className="m-2 border-dark text-center">
+      <Container >
+        <Card className="border-dark text-center">
           <Card.Header className="bg-dark text-white">
             <h2>Login for full functionality</h2>
           </Card.Header>
@@ -30,6 +30,6 @@ export default function Login() {
           </Card.Body>
         </Card>
       </Container>
-    </div>
+    </section>
   );
 }
